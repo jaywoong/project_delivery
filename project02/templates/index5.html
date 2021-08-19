@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ins2ght</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon2.png' %}" rel="icon">
+  <link href="{% static 'assets/img/favicon2.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Scaffold - v2.0.0
+  * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+<header id="header" class="fixed-top">
+    <div class="container d-flex">
+
+      <div >
+        <a href="index"><img src="{% static 'assets/img/logo4.png' %}" class="img-fluid" alt=""></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="index">개요</a>
+          <li><a href="index3">창업 위치 선정</a>
+          <li><a href="index2">업종 선정</a>
+          <li><a href="index4">컨설팅</a>
+          <li class="active"><a href="index5">수요 예측</a>
+          <li><a href="index6">About us</a>
+          {% if request.session.suser == None %}
+          <li><a href="login">로그인</a>
+          <li><a href="signup">회원가입</a>
+          {% else %}
+          <li class="drop-down"><a href="#">{{request.session.suser.name}}(님)</a>
+             <ul>
+<!--                 <li><a href="{% url 'login' %}">{{request.session.suser.id}}</a></li>-->
+               <li><a href="{% url 'profile' %}?id={{request.session.suser.id}}">PROFILE</a></li>
+               <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+               <li><a href="{% url 'quit' %}?id={{request.session.suser.id}}">회원 탈퇴</a></li>
+             </ul>
+          {% endif %}
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <div class="header-social-links">
+        <a href="https://github.com/rcm2000/BigdataProject02" class="icon-git" target=”_blank”><i class="icofont-github"></i></a>
+        <a href="#" class="facebook"><i class="icofont-google-plus"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
+          <div>
+            <h1>수요 예측 서비스</h1>
+            <h2>Ins2ght의 수요 예측 서비스를 이용해보세요.<br>
+배달 앱 데이터 만으로 내 가게에 최적화된 수요 예측 시계열 모델을 만들 수 있습니다.
+빅데이터 분석을 통해 미래 수요를 예측하고 트렌드 변화를 살펴보세요. </h2>
+            <a href="#about" class="btn-get-started scrollto">시작하기</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+          <img src="{% static 'assets/img/features-1.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about2 ">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="zoom-in">
+            <img src="{% static 'assets/img/1.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 " data-aos="fade-left">
+            <div class="content pt-4 pt-lg-0">
+              <h3>모델 학습 및 예측</h3>
+              <p class="font-italic">
+              Model training and prediction With Facebook FBprophet library
+              </p>
+              <ul>
+                <li><i class="icofont-check-circled"></i> Facebook에서 공개한 FBprophet 라이브러리를 활용한 시계열 데이터 예측을 수행합니다.</li>
+                <li><i class="icofont-check-circled"></i> 가게 매출 데이터를 활용하여 모델을 학습시키고 수요를 예측합니다.</li>
+                  </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-right">
+            <div class="content pt-4 pt-lg-0">
+              <h3>트렌드 리포트</h3>
+              <p class="font-italic">
+
+You can check the demand trend of your store through the trend report.
+              </p>
+              <ul>
+                <li><i class="icofont-check-circled"></i> 트렌드 리포트를 통해 내 가게의 수요 트렌드를 확인할 수 있습니다. </li>
+                <li><i class="icofont-check-circled"></i> 월별, 요일별, 시간별 변화를 한눈에 알아보기 쉽게 시각화하여 제공해 드립니다</li>
+               </ul>
+
+
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="zoom-in" align="right">
+            <img src="{% static 'assets/img/4.png' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+
+      </div>
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="zoom-in">
+            <img src="{% static 'assets/img/3.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
+            <div class="content pt-4 pt-lg-0">
+              <h3>20일 정밀 예측</h3>
+              <p class="font-italic">
+               You can forecast and check the demand, minimum demand, and maximum demand for the next 20 days in real time.
+              </p>
+              <ul>
+                <li><i class="icofont-check-circled"></i> 수요 예측을 통해 식재료 수급을 효율적으로 관리해보세요.</li>
+                <li><i class="icofont-check-circled"></i> 다가올 20일의 수요, 최저 수요, 최대 수요를 예측하여 실시간으로 확인할 수 있습니다.</li>
+
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>수요 예측 서비스 신청</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-right">
+            <div class="info">
+              <div class="info2">
+
+                <img src="{% static 'assets/img/features-2.png' %}" class="img-fluid" alt="">
+                <i class="icofont-info"></i>
+                <h4>infomation:</h4>
+                <p>수요 예측 맞춤 분석 서비스를 이용하고 싶으신 고객님 꼐서는 우측의 메세지를 작성하시어 보내주시면 자세하게 상담 안내를 도와드립니다.</p>
+              </div>
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>cjdauddl93@gmail.com</p>
+              </div>
+
+               </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-left">
+            <div class="info">
+            <form action="https://script.google.com/macros/s/AKfycbz5uJC1aZ-qPAS2LJZjuDRFfIhrxk8RWV1LIpb5FhCqn6Dj9AFn/exec" method="post" role="form" class="gform" data-email="cjdauddl93@gmail.com">
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div style="display:none" class="thankyou_message">
+ <!-- You can customize the thankyou message by editing the code below -->
+ <h3> 신청이 완료되었습니다!
+   <br>기다려 주시면 기입하신 이메일로 상담 관련 연락 드리겠습니다.
+ </h3>
+</div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div></div>
+
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>INS2GHT</h3>
+
+                <strong>Email:</strong> cjdauddl93@gmail.com<br>
+              </p>
+              <br><br><br>
+              <div class="social-links mt-3">
+                <a href="https://github.com/rcm2000/BigdataProject02" class="github" target=”_blank”><i class="bx bxl-github"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Reference</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://public.tableau.com/ko-kr/search/vizzes/%EB%85%B8%EC%B2%AD%EB%AA%85" target=”_blank”>Tableau</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://bdp.kt.co.kr/invoke/SOKBP0000/?ver=2.1" target=”_blank”>KT 빅데이터 플렛폼</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://dacon.io/competitions/official/235753/data" target=”_blank”>Dacon</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://data.seoul.go.kr/" target=”_blank”>서울 열린데이터 광장</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.data.go.kr/" target=”_blank”>공공 데이터 포럼</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> Data analysis</li>
+              <li><i class="bx bx-chevron-right"></i> Web Development</li>
+              <li><i class="bx bx-chevron-right"></i> Machinlearning</li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Introduce</h4>
+            <p>Ins2ght는 2명이서 유용한 인사이트를 도출해내자는 의미를 가지고 있습니다.</p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Scaffold</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script data-cfasync="false" type="text/javascript"
+src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+</body>
+
+</html>

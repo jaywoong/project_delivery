@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ins2ght</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon2.png' %}" rel="icon">
+  <link href="{% static 'assets/img/favicon2.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Scaffold - v2.0.0
+  * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex">
+
+      <div >
+        <a href="index"><img src="{% static 'assets/img/logo4.png' %}" class="img-fluid" alt=""></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="index">개요</a>
+          <li class="drop-down active"><a href="">창업 위치 선정</a>
+            <ul>
+              <li><a href="#country">전국 탐색</a></li>
+              <li><a href="#seoul">서울시</a></li>
+              <li><a href="#gyeonggi">경기도</a></li>
+            </ul>
+          </li>
+          <li><a href="index2">업종 선정</a>
+          <li><a href="index4">컨설팅</a>
+          <li><a href="index5">수요 예측</a>
+          <li><a href="index6">About us</a>
+          {% if request.session.suser == None %}
+          <li><a href="login">로그인</a>
+          <li><a href="signup">회원가입</a>
+          {% else %}
+          <li class="drop-down"><a href="#">{{request.session.suser.name}}(님)</a>
+             <ul>
+<!--                 <li><a href="{% url 'login' %}">{{request.session.suser.id}}</a></li>-->
+               <li><a href="{% url 'profile' %}?id={{request.session.suser.id}}">PROFILE</a></li>
+               <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+               <li><a href="{% url 'quit' %}?id={{request.session.suser.id}}">회원 탈퇴</a></li>
+             </ul>
+          {% endif %}
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <div class="header-social-links">
+        <a href="https://github.com/rcm2000/BigdataProject02" class="icon-git" target=”_blank”><i class="icofont-github"></i></a>
+        <a href="#" class="facebook"><i class="icofont-google-plus"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+
+  <section id="country">
+
+    <div class="container">
+      <div class='tableauPlaceholder' id='viz1628760964393' style='position: relative'><noscript><a href='#'><img alt='대시보드 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;8X&#47;8XFMP6H6X&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;8XFMP6H6X' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;8X&#47;8XFMP6H6X&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='ko-KR' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1628760964393');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1050px';vizElement.style.width='100%';vizElement.style.minHeight='787px';vizElement.style.maxHeight='1487px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1050px';vizElement.style.width='100%';vizElement.style.minHeight='787px';vizElement.style.maxHeight='1487px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='2077px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+
+    <!-- ======= seoul Section ======= -->
+<section id="seoul" class="seoul">
+<div class="container">
+      <div class='tableauPlaceholder' id='viz1628769497162' style='position: relative'><noscript><a href='#'><img alt='대시보드 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;1_&#47;1_16285153129530&#47;3_2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='1_16285153129530&#47;3_2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;1_&#47;1_16285153129530&#47;3_2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='ko-KR' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1628769497162');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1050px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='1487px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='1050px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='1487px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</div>
+  </section>
+    <!-- ======= Clients Section ======= -->
+<section id="gyeonggi" class="about">
+      <div class="container">
+
+          <h3>경기도 구역별 데이터</h3><br><br><br><br><br><br><br>
+          <br><br><br>
+            <img src="{% static 'assets/img/tobecon.png' %}">
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+ <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>INS2GHT</h3>
+
+                <strong>Email:</strong> cjdauddl93@gmail.com<br>
+              </p>
+              <br><br><br>
+              <div class="social-links mt-3">
+                <a href="https://github.com/rcm2000/BigdataProject02" class="github" target=”_blank”><i class="bx bxl-github"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Reference</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://public.tableau.com/ko-kr/search/vizzes/%EB%85%B8%EC%B2%AD%EB%AA%85" target=”_blank”>Tableau</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://bdp.kt.co.kr/invoke/SOKBP0000/?ver=2.1" target=”_blank”>KT 빅데이터 플렛폼</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://dacon.io/competitions/official/235753/data" target=”_blank”>Dacon</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://data.seoul.go.kr/" target=”_blank”>서울 열린데이터 광장</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.data.go.kr/" target=”_blank”>공공 데이터 포럼</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> Data analysis</li>
+              <li><i class="bx bx-chevron-right"></i> Web Development</li>
+              <li><i class="bx bx-chevron-right"></i> Machinlearning</li>
+
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Introduce</h4>
+            <p>Ins2ght는 2명이서 유용한 인사이트를 도출해내자는 의미를 가지고 있습니다.</p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Scaffold</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a>
+
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

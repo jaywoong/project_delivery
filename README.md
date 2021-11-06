@@ -18,7 +18,13 @@
 
 &nbsp;**[기획안](md-images/insight_plan.pdf)**&nbsp; **[결과보고서](md-images/insight_report.pdf)** &nbsp;**[웹페이지](http://cjdauddl93.pythonanywhere.com/)**
 
+<<<<<<< HEAD
 
+=======
+ ![mvt](md-images/mvt-16292523246844.jpg)
+
+- 분석된 데이터는 Tableau와 django를 통하여 시각화 되며, 구축된 DB와 함께 연결하여 파이썬 애니워어를 통하여 웹상에 배포됩니다.
+>>>>>>> 4aaa66bce723b0a4c6ddf5930490f4a5c3860fda
 
 ###  :pushpin: **Index**
 
@@ -169,6 +175,7 @@ df.loc[mask, 'hour'] = '야간'
 
 
 
+<<<<<<< HEAD
 #### :heavy_check_mark: 배달 주문 데이터와 시/군/구 별 인구 데이터 병합
 
 ##### 1. 인구데이터 가공
@@ -183,6 +190,9 @@ df_pop6 = pd.read_csv('./pop/LOCAL_PEOPLE_DONG_202005.csv',)
 result = pd.concat([df_pop,df_pop2,df_pop3,df_pop4,df_pop5,df_pop6,])
 ## 필요 기간별 인구 데이터를 모두 불러온 후 concatenation 하였다.
 ```
+=======
+1. **인구 데이터 알맞게 가공**
+>>>>>>> 4aaa66bce723b0a4c6ddf5930490f4a5c3860fda
 
 
 
@@ -240,13 +250,21 @@ df_fin = df.merge(df3, on=['date','code'], how='left')
 
   ![shop](md-images/shop.PNG)
 
+<<<<<<< HEAD
   
 
 ##### 2. 지역별 상점수(공급) 대비 배달 건수(수요)로 경쟁 점수 산출
+=======
+- 해당 지역의 상점수 (공급) 대비 배달 건수(수요)를 확인하여 점수로 나타내기 위하여 전처리 작업을 실시하였다.
+>>>>>>> 4aaa66bce723b0a4c6ddf5930490f4a5c3860fda
 
 ![rel1_1](md-images/rel1_1.PNG)
 
+<<<<<<< HEAD
 - 번거롭게 조인하지 않고 태블로를 통하여 간단하게 릴레이션을 주어  작업하였습니다
+=======
+번거롭게 조인하지 않고 태블로를 통하여 간단하게 릴레이션을 주어 작업하였습니다
+>>>>>>> 4aaa66bce723b0a4c6ddf5930490f4a5c3860fda
 
 - 태블로 내에는 조인과 다르게 간단히 두 컬럼을 비교하여 연결시켜주는 릴레이션이 존재합니다. 상단은 배달상점 데이터와 배달 주문 데이터의 `Unique ` 값이 같은 컬럼인 `code` , `menu` 를 릴레이션 걸어주는 모습입니다.
 

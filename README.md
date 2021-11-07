@@ -14,7 +14,7 @@
 
 
 
-### *:bulb: 최종 구현**
+### :bulb: 최종 구현
 
 &nbsp;**[기획안](md-images/insight_plan.pdf)**&nbsp; **[결과보고서](md-images/insight_report.pdf)** &nbsp;**[웹페이지](http://cjdauddl93.pythonanywhere.com/)**
 

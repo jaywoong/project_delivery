@@ -1,4 +1,4 @@
-<img src="md-images/logo.png" alt="logo" style="zoom:100%;"/>
+<img src="md-images/logo.png" alt="logo" style="zoom:10%;"/>
 
 ## 코로나 시대와 함께하는 국민의 음식 배달 문화 분석 :poultry_leg: :pizza: :meat_on_bone:
 

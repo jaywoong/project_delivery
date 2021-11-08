@@ -1,6 +1,6 @@
 
 
-# <center><img src="md-images/logo.png" alt="logo" style="zoom:50%;"/><center/>
+# <img src="md-images/logo.png" alt="logo" style="zoom:50%;"/>
 
 
 

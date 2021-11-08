@@ -1,6 +1,10 @@
 
 
+<<<<<<< HEAD
 # <img src="md-images/logo.png" alt="logo" style="zoom:50%;"/>
+=======
+# <center><img src="md-images/logo.png" alt="logo" style="zoom:20%;"/><center/>
+>>>>>>> 938995eaf42bbe894bdf0fd15269c4b4957a7dfe
 
 
 

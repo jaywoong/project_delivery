@@ -758,7 +758,7 @@ df_fin = df.merge(df3, on=['date','code'], how='left')
 
 ![login](md-images/login.PNG)
 
-- 로그인 페이지 - db에 저장된 사용자 데이터를 통하여 로그인이 가능
+- 로그인 페이지 - db에 저장된 사용자 데이터를 통하여 로그인 가능
 
 ![login2](md-images/login2.PNG)
 
